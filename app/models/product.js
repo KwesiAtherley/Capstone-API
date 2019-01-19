@@ -11,16 +11,18 @@ const productSchema = new mongoose.Schema({
   },
   quantity: {
     type: Number
+  },
+  cost: {
+    type: Number
+  },
+  sale: {
+    type: Number
+  },
+  owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
   }
-  // readingList: {
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: 'ReadingList'
-  // },
-  // owner: {
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: 'User',
-  //   required: true
-  // }
 }, {
   timestamps: true
 })
