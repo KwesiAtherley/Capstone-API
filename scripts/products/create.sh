@@ -14,7 +14,8 @@ curl "${API}${URL_PATH}" \
       "brand": "'"${BRAND}"'",
       "quantity": "'"${QUANTITY}"'",
       "cost": "'"${COST}"'",
-      "sale": "'"${SALE}"'"
+      "sale": "'"${SALE}"'",
+      "owner": "'"${ID}"'"
     }
   }'
 

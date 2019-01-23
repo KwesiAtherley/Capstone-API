@@ -25,9 +25,8 @@ router.post('/products', requireToken, (req, res) => {
 
 // Index
 // GET/products
-router.get('/products', (req, res) => {
+router.get('/products', requireToken, (req, res) => {
   Product.find()
-    .populate('readingList')
     .then(products => products.map(product => product.toObject()))
     .then(products => res.status(200).json({products}))
     .catch(err => handle(err, res))
@@ -35,9 +34,8 @@ router.get('/products', (req, res) => {
 
 // Show
 // Get/products/4s
-router.get('/products/:id', (req, res) => {
+router.get('/products/:id', requireToken, (req, res) => {
   Product.findById(req.params.id)
-    .populate('readingList')
     .then(handle404)
     .then(product => res.status(200).json({product: product.toObject()}))
     .catch(err => handle(err, res))
