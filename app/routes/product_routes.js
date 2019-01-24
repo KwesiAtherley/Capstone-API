@@ -23,12 +23,25 @@ router.post('/products', requireToken, (req, res) => {
     .catch(err => handle(err, res))
 })
 
-// Index
-// GET/products
+// INDEX
+// GET /products
 router.get('/products', requireToken, (req, res) => {
   Product.find()
-    .then(products => products.map(product => product.toObject()))
-    .then(products => res.status(200).json({products}))
+    .then(products => {
+      const productsOwner = products.filter(product => {
+        if (JSON.stringify(product.owner) === JSON.stringify(req.user._id)) {
+          return true
+        }
+      })
+
+      // `products` will be an array of Mongoose documents
+      // we want to convert each one to a POJO, so we use `.map` to
+      // apply `.toObject` to each one
+      return productsOwner.map(product => product.toObject())
+    })
+    // respond with status 200 and JSON of the products
+    .then(products => res.status(200).json({ products: products }))
+    // if an error occurs, pass it to the handler
     .catch(err => handle(err, res))
 })
 
