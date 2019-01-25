@@ -4,10 +4,10 @@
 Once a user signs up and signs in, the user is able to create a product, by detailing the name, brand, quantity, cost and sale of said product. The user can also show and list a single or all of their products, and update or delete a particular entry.
 
 ### Links
-- SR Solutions Front End Repo: https://github.com/KwesiAtherley/SR-Solutions-Client
-- SR Solutions Back End Repo: https://github.com/KwesiAtherley/Capstone-API
-- SR Solutions Deployed Site: https://kwesiatherley.github.io/SR-Solutions-Client/
-- SR Solutions Back End Deployed Site: https://secure-sea-49423.herokuapp.com/
+* [SR Solutions Front End Repo](https://github.com/KwesiAtherley/SR-Solutions-Client)
+* [SR Solutions Back End Repo](https://github.com/KwesiAtherley/Capstone-API)
+* [SR Solutions Deployed Site](https://kwesiatherley.github.io/SR-Solutions-Client/)
+* [SR Solutions Back End Deployed Site]( https://secure-sea-49423.herokuapp.com/)
 
 ### Entity Relationship Diagrams
 ![Entity Relationship Diagrams](https://i.imgur.com/jIHjMm3.jpg)
