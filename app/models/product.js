@@ -18,6 +18,9 @@ const productSchema = new mongoose.Schema({
   sale: {
     type: Number
   },
+  profit: {
+    type: Number
+  },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
